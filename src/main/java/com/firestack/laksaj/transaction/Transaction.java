@@ -96,6 +96,10 @@ public class Transaction {
         return this.status.equals(TxStatus.Rejected);
     }
 
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
     public Transaction confirm(String txHash, int maxAttempts, int interval) throws InterruptedException {
         this.setStatus(TxStatus.Pending);
         for (int i = 0; i < maxAttempts; i++) {
