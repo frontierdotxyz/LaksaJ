@@ -142,7 +142,7 @@ public class Contract {
         tx = signer.sign(tx);
         try {
             HttpProvider.CreateTxResult createTxResult = provider.createTransaction(tx.toTransactionPayload()).getResult();
-            tx.setID(createTxResult.getTranID());
+            tx.setTransactionHash(createTxResult.getTranID());
             tx.confirm(createTxResult.getTranID(), attempts, interval);
         } catch (IOException e) {
             e.printStackTrace();
