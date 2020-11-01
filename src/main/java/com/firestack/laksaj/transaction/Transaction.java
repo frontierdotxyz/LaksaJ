@@ -96,8 +96,8 @@ public class Transaction {
         return this.status.equals(TxStatus.Rejected);
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setTransactionHash(String hash) {
+        this.ID = hash;
     }
 
     public Transaction confirm(String txHash, int maxAttempts, int interval) throws InterruptedException {
